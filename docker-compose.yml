@@ -1,0 +1,19 @@
+services:
+  apache:
+    build: .
+    ports:
+      - 8888:80
+    links:
+      - mysql
+    volumes:
+      - ./:/var/www/html
+  mysql:
+    image: mysql:8.0
+    ports:
+      - 8889:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=app
+      - MYSQL_USER=app
+      - MYSQL_PASSWORD=app123
+
