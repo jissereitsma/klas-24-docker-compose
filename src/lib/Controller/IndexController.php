@@ -9,6 +9,7 @@ use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
 use Twig\Extension\DebugExtension;
+use Twig\Extra\Markdown\MarkdownExtension;
 use Twig\Loader\FilesystemLoader;
 
 class IndexController
@@ -36,6 +37,8 @@ class IndexController
         if ($debug) {
             $twig->addExtension(new DebugExtension());
         }
+
+        $twig->addExtension(new MarkdownExtension());
 
         $products = (new ProductLoader())->getProducts();
 
