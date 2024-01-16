@@ -2,3 +2,5 @@ src/vendor/
 src/composer.lock
 apache-access.log
 apache-error.log
+src/app.log
+.idea/
